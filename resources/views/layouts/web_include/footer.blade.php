@@ -4,39 +4,39 @@
         <div class="row align-items-center">
             <div class="col-lg-4 col-md-6 order-2 order-md-0">
                 <div class="footer-logo">
-                    <a href="index.html"><img src="img/logo/w_logo.png" alt=""></a>
+                    <a href="index.html"><img src="{{ url('web-img/logo/w_logo.png') }}" alt=""></a>
                 </div>
             </div>
             <div class="col-lg-8 col-md-6">
                 <div class="row footer-brand-active">
                     <div class="col">
                         <div class="footer-brand-item">
-                            <a href="#"><img src="img/brand/footer_brand01.png" alt=""></a>
+                            <a href="#"><img src="{{ url('web-img/brand/footer_brand01.png') }}" alt=""></a>
                         </div>
                     </div>
                     <div class="col">
                         <div class="footer-brand-item">
-                            <a href="#"><img src="img/brand/footer_brand02.png" alt=""></a>
+                            <a href="#"><img src="{{ url('web-img/brand/footer_brand02.png') }}" alt=""></a>
                         </div>
                     </div>
                     <div class="col">
                         <div class="footer-brand-item">
-                            <a href="#"><img src="img/brand/footer_brand03.png" alt=""></a>
+                            <a href="#"><img src="{{ url('web-img/brand/footer_brand03.png') }}" alt=""></a>
                         </div>
                     </div>
                     <div class="col">
                         <div class="footer-brand-item">
-                            <a href="#"><img src="img/brand/footer_brand04.png" alt=""></a>
+                            <a href="#"><img src="{{ url('web-img/brand/footer_brand04.png') }}" alt=""></a>
                         </div>
                     </div>
                     <div class="col">
                         <div class="footer-brand-item">
-                            <a href="#"><img src="img/brand/footer_brand05.png" alt=""></a>
+                            <a href="#"><img src="{{ url('web-img/brand/footer_brand05.png') }}" alt=""></a>
                         </div>
                     </div>
                     <div class="col">
                         <div class="footer-brand-item">
-                            <a href="#"><img src="img/brand/footer_brand03.png" alt=""></a>
+                            <a href="#"><img src="{{ url('img/brand/footer_brand03.png') }}" alt=""></a>
                         </div>
                     </div>
                 </div>
