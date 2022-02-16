@@ -29,20 +29,38 @@ require __DIR__.'/auth.php';
 
 //Front View Routes
 Route::get('/',[HomeController::class,'home'])->name('home');
-
+// Web Route of All Products to show in Website Controller is Admin/ProductController
+Route::get('/products',[ProductController::class,'products']);
+Route::get('/detail-products/{id}',[ProductController::class,'productDetail']);
+Route::get('/search',[ProductController::class,'search']);
 
 
 
 
 //Admin Panel Routes
 
-Route::get('/admin',[AdminController::class,'admin']);
+Route::prefix('/admin')->namespace('Admin')->group(function() {
 
-Route::get('/dashboard',[AdminController::class,'dashboard'])->name('dashboard');
+    //  Login Route
+    Route::match(['get','post'],'/',[AdminController::class,'admin'])->name('adminLogin');
 
-//For All Products in Admin panel
+    Route::group(['middleware'=>['admin']],function(){
+        // Admin Dashboard Home Page
+        Route::get('/dashboard',[AdminController::class,'dashboard'])->name('dashboard');
 
-Route::get('/products',[ProductController::class,'listProduct'])->name('productList');
-//Getting data from database
-Route::get('/getAllProducts',[ItemController::class,'getAllProducts']);
+        //For All Products in Admin panel
+        Route::get('/products-list',[ProductController::class,'listProduct'])->name('productList');
+        //Getting data from database
+        Route::get('/getAllProducts',[ItemController::class,'getAllProducts']);
+    });
+
+});
+
+
+
+
+
+
+
+
 

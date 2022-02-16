@@ -2711,7 +2711,11 @@ label {
     flex-grow: 1;
 }
 .inv-content-top ul {
-    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+.inv-content-top .ul {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 15px;
@@ -2719,6 +2723,12 @@ label {
 .inv-content-top .option {
     display: flex;
     width: 60%;
+    flex: 0 0 60%;
+}
+
+.inv-content-top .option1 {
+    display: flex;
+    width: 70%;
     flex: 0 0 60%;
 }
 .inv-content-top .option a,

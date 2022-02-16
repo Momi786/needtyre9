@@ -39,15 +39,16 @@
                     <div class="menu-wrap">
                         <nav class="menu-nav show">
                             <div class="logo">
-                                <a href="index.html" class="sticky-logo-none"><img src="{{ url('web-img/logo/logo.png') }}" alt="Logo"></a>
-                                <a href="index.html" class="sticky-logo-active"><img src="{{ url('web-img/logo/b_logo.png') }}" alt="Logo"></a>
+                                <a href="#" class="sticky-logo-none"><img src="{{ url('web-img/logo/logo.png') }}" alt="Logo"></a>
+                                <a href="#" class="sticky-logo-active"><img src="{{ url('web-img/logo/b_logo.png') }}" alt="Logo"></a>
                             </div>
                             <div class="navbar-wrap main-menu d-none d-lg-flex">
                                 <ul class="navigation">
                                     <li class="active"><a href="/">Home</a>
                                     </li>
-                                    <li><a href="about-us.html">About Us</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="{{url('/products')}}">Products</a></li>
+                                    <li><a href="#">Contact</a></li>
 
 
 
@@ -118,7 +119,12 @@
                                         </ul>
                                     </li>
                                     <li class="header-btn"><a href="contact.html" class="btn">get a quote</a></li>
-                                    <li class="header-search"><a href="#" data-toggle="collapse" data-target="#collapse-search-body" aria-expanded="false" aria-controls="collapse-search-body"><i class="fas fa-search"></i></a></li>
+                                    <li class="header-search">
+                                        <a href="#" data-toggle="collapse" data-target="#collapse-search-body"
+                                           aria-expanded="false" aria-controls="collapse-search-body">
+                                            <i class="fas fa-search"></i>
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         </nav>
@@ -152,9 +158,9 @@
         <div id="collapse-search-body" class="collapse-search-body collapse">
             <div class="search-body">
                 <div class="container custom-container">
-                    <form action="#">
+                    <form action="{{ url('/search') }}">
                         <div class="form-item">
-                            <input name="search" placeholder="Type here...">
+                            <input name="query" placeholder="Type here...">
                             <button type="submit"><i class="fas fa-search"></i></button>
                         </div>
                     </form>

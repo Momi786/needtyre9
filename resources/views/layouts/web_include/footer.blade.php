@@ -100,15 +100,18 @@
                             <div class="col-lg-3 col-md-3 col-sm-6">
                                 <div class="footer-widget mb-50">
                                     <div class="fw-title mb-30">
-                                        <h4 class="title">Our Info</h4>
+                                        <h6 class="title">CUSTOMER SERVICE</h6>
                                     </div>
                                     <div class="fw-link">
                                         <ul>
-                                            <li><a href="#">About Us</a></li>
-                                            <li><a href="#">Our Service</a></li>
-                                            <li><a href="#">Our Shop</a></li>
-                                            <li><a href="#">Blog</a></li>
-                                            <li><a href="#">Contact</a></li>
+                                            <li><a href="#">Become a Dropshipper</a></li>
+                                            <li><a href="#">Track My Order</a></li>
+                                            <li><a href="#">Speed Rating Chart</a></li>
+                                            <li><a href="#">Cancelling Order</a></li>
+                                            <li><a href="#">Modifying Order</a></li>
+                                            <li><a href="#">Returning Tire</a></li>
+                                            <li><a href="#">Wholesale Membership</a></li>
+                                            <li><a href="#">Sitemap</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -116,15 +119,17 @@
                             <div class="col-lg-3 col-md-3 col-sm-6">
                                 <div class="footer-widget mb-50">
                                     <div class="fw-title mb-30">
-                                        <h4 class="title">Quick Link</h4>
+                                        <h6 class="title">COMPANY INFORMATION</h6>
                                     </div>
                                     <div class="fw-link">
                                         <ul>
-                                            <li><a href="#">About Us</a></li>
-                                            <li><a href="#">Our Service</a></li>
-                                            <li><a href="#">Our Shop</a></li>
-                                            <li><a href="#">Blog</a></li>
-                                            <li><a href="#">Contact</a></li>
+                                            <li><a href="#">FAQs</a></li>
+                                            <li><a href="#">Return Policy</a></li>
+                                            <li><a href="#">Shipping Info</a></li>
+                                            <li><a href="#">Privacy Policy</a></li>
+                                            <li><a href="#">Terms of Use</a></li>
+                                            <li><a href="#">Deals</a></li>
+                                            <li><a href="#">Partners</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -169,7 +174,7 @@
             <div class="row align-items-center">
                 <div class="col-md-8">
                     <div class="copyright-text">
-                        <p>Copyright © 2021. All rights reserved. by Business-theme</p>
+                        <p>Copyright © 2022. All rights reserved. by Need Tire</p>
                     </div>
                 </div>
                 <div class="col-md-4">
