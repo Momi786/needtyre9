@@ -34,16 +34,36 @@ class RegisteredUserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => ['required', 'string', 'max:255'],
+            'first_name' => ['required', 'string', 'max:255'],
+            'last_name' => ['required', 'string', 'max:255'],
+            'city' => ['required', 'string', 'max:255'],
+            'st_address' => ['required'],
+            'post_code' => ['required', 'string', 'max:255'],
+            'state_province' => ['required', 'string', 'max:255'],
+            'country' => ['required', 'string', 'max:255'],
+            'number' => ['required', 'string', 'max:255'],
+            'find_us' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
         $user = User::create([
-            'name' => $request->name,
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'city' => $request->city,
+            'st_address' => $request->st_address,
+            'post_code' => $request->post_code,
+            'state_province' => $request->state_province,
+            'country' => $request->country,
+            'number' => $request->number,
+            'find_us' => $request->find_us,
+            'dob' => $request->dob,
+            'comp_name' => $request->comp_name,
+            'fax_number' => $request->fax_number,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
+
 
         event(new Registered($user));
 

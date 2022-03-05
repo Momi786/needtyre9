@@ -34,22 +34,42 @@
                                 <h3 class="font-weight-bolder text-info text-gradient">Welcome back</h3>
                                 <p class="mb-0">Enter your Email and Password to Sign in</p>
                             </div>
+                            {{--   Session Error If User Not Login    --}}
+                            @if(Session::has('error_message'))
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    {{ Session::get('error_message') }}
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                            @endif
+                            {{--   Form Validation Errors    --}}
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
                             <div class="card-body">
-                                <form role="form">
+                                <form role="form" action="{{ url('/admin') }}" method="post">
+                                    @csrf
                                     <label>Email</label>
                                     <div class="mb-3">
-                                        <input type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="email-addon">
+                                        <input type="email" class="form-control" name="email" placeholder="Email" aria-label="Email" aria-describedby="email-addon">
                                     </div>
                                     <label>Password</label>
                                     <div class="mb-3">
-                                        <input type="email" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon">
+                                        <input type="password" class="form-control" name="password" placeholder="Password" aria-label="Password" aria-describedby="password-addon">
                                     </div>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="rememberMe" checked="">
                                         <label class="form-check-label" for="rememberMe">Remember me</label>
                                     </div>
                                     <div class="text-center">
-                                        <button type="button" class="btn bg-gradient-info w-100 mt-4 mb-0">Sign in</button>
+                                        <button type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0">Sign in</button>
                                     </div>
                                 </form>
                             </div>

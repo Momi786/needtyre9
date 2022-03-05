@@ -22,8 +22,8 @@
                                 <a href="#"><i class="fab fa-linkedin"></i></a>
                             </li>
                             <li class="header-top-login">
-                                <a href="login-register.html"><i class="far fa-user-circle"></i> LOGIN</a>
-                                <a href="login-register.html">REGISTER</a>
+                                <a href="{{url('login')}}"><i class="far fa-user-circle"></i> LOGIN</a>
+                                <a href="{{url('register')}}">REGISTER</a>
                             </li>
                         </ul>
                     </div>

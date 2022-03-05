@@ -4,7 +4,7 @@
         <div class="row align-items-center">
             <div class="col-lg-4 col-md-6 order-2 order-md-0">
                 <div class="footer-logo">
-                    <a href="index.html"><img src="{{ url('web-img/logo/w_logo.png') }}" alt=""></a>
+                    <a href="#"><img src="{{ url('web-img/logo/w_logo.png') }}" alt=""></a>
                 </div>
             </div>
             <div class="col-lg-8 col-md-6">

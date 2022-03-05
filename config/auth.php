@@ -14,7 +14,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'admin',
+        'guard' => 'web',
         'passwords' => 'users',
     ],
 
@@ -41,13 +41,11 @@ return [
             'provider' => 'users',
         ],
 
-        //For Admin Panel
+        // for admin Panel
         'admin' => [
             'driver' => 'session',
             'provider' => 'admins',
         ],
-
-
     ],
 
     /*
@@ -73,15 +71,16 @@ return [
             'model' => App\Models\User::class,
         ],
 
-        'admins' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\Admin::class,
-        ],
-
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
+
+        // Admin Panel
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Admin::class,
+        ],
     ],
 
     /*

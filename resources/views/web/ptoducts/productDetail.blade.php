@@ -52,19 +52,30 @@
                                                     </li>
                                                     <li><i class="fas fa-shipping-fast"></i> Free Shipping</li>
                                                     <li><i class="fas fa-handshake"></i> Risk-Free Guarantee</li>
-                                                    {{--                                            <li class="price">$13,000<span>/mo</span></li>--}}
+                                                    {{-- <li class="price">$13,000<span>/mo</span></li>--}}
                                                 </ul>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-sm-8">
-                                        <div class="inventory-list-content">
+                                        <div class="inventory-list-content prod_data">
                                             <h1><a href="#">{{$item->brand}}</a></h1>
                                             <h4><a href="{{ url('/detail-products') }}/{{$item->id}}">{{$item->item}}</a></h4>
                                             <p class="location"><i class="fas fa-map-marker-alt"></i>{{$item->LongDescription}}</p>
                                             <div class="inv-item-meta">
                                                 <ul class="justify-content-end">
-                                                    <li class="call"><a href="#"><i class="fas fa-shopping-cart"></i>Add To Cart</a></li>
+
+{{--                                                    <li class="call pl-5"><a href="#" class="addToCartBtn"><i class="fas fa-shopping-cart"></i></a></li>--}}
+                                                    <form action="{{ url('add-to-cart') }}" method="post">
+                                                        @csrf
+                                                        <div class="quantity">
+                                                            <a href="#" class="quantity__minus"><span>-</span></a>
+                                                            <input name="prod_qty" type="text" class="quantity__input" value="4">
+                                                            <a href="#" class="quantity__plus"><span>+</span></a>
+                                                        </div>
+                                                        <input type="hidden" value="{{$item->id}}" name="prod_id" class="prod_id">
+                                                        <button type="submit" class="addCart">Add To Cart</button>
+                                                    </form>
 
                                                 </ul>
                                             </div>
@@ -200,129 +211,16 @@
 
                         </div>
                     </div>
-{{--                    <div class="col-lg-4">--}}
-{{--                        <aside class="inventory-sidebar">--}}
-{{--                            <div class="widget inventory-widget">--}}
-{{--                                <div class="inv-widget-title mb-25">--}}
-{{--                                    <h5 class="title">Find Perfect Vehicles</h5>--}}
-{{--                                </div>--}}
-{{--                                <form action="#" class="sidebar-find-car">--}}
-{{--                                    <div class="form-grp search-box">--}}
-{{--                                        <input type="text" placeholder="Search">--}}
-{{--                                        <button><i class="fas fa-search"></i></button>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="form-grp">--}}
-{{--                                        <i class="flaticon-placeholder-1"></i>--}}
-{{--                                        <input type="text" placeholder="Location">--}}
-{{--                                    </div>--}}
-{{--                                    <div class="row">--}}
-{{--                                        <div class="col-6">--}}
-{{--                                            <div class="form-grp">--}}
-{{--                                                <i class="flaticon-gasoline-pump"></i>--}}
-{{--                                                <input type="text" placeholder="Petrol">--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="col-6">--}}
-{{--                                            <div class="form-grp">--}}
-{{--                                                <i class="far fa-clock"></i>--}}
-{{--                                                <input type="text" value="2021">--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="form-grp">--}}
-{{--                                        <i class="flaticon-car-4"></i>--}}
-{{--                                        <select name="name" class="selected">--}}
-{{--                                            <option value="">Car Type</option>--}}
-{{--                                            <option value="">Jaguer M1 Hybrid</option>--}}
-{{--                                            <option value="">Audi New Bom 800</option>--}}
-{{--                                            <option value="">Audi A8 Hybrid</option>--}}
-{{--                                            <option value="">Toyota T86LM</option>--}}
-{{--                                        </select>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="form-grp">--}}
-{{--                                        <i class="fas fa-dollar-sign"></i>--}}
-{{--                                        <select name="name" class="selected">--}}
-{{--                                            <option value="">Price</option>--}}
-{{--                                            <option value="">$10000 - $15000</option>--}}
-{{--                                            <option value="">$15000 - $25000</option>--}}
-{{--                                            <option value="">$25000 - $35000</option>--}}
-{{--                                            <option value="">$35000 - $55000</option>--}}
-{{--                                            <option value="">$55000 - $100000</option>--}}
-{{--                                        </select>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="form-grp">--}}
-{{--                                        <i class="flaticon-speedometer"></i>--}}
-{{--                                        <select name="name" class="selected">--}}
-{{--                                            <option value="">Transmission :</option>--}}
-{{--                                            <option value="">Manual Transmission</option>--}}
-{{--                                            <option value="">Gear Transmission</option>--}}
-{{--                                        </select>--}}
-{{--                                    </div>--}}
-{{--                                    <button class="btn">Find New Vehicles</button>--}}
-{{--                                </form>--}}
-{{--                            </div>--}}
-{{--                            <div class="widget inventory-widget">--}}
-{{--                                <div class="inv-widget-title mb-25">--}}
-{{--                                    <h5 class="title">Featured Vehicles</h5>--}}
-{{--                                </div>--}}
-{{--                                <div class="sidebar-fv-active">--}}
-{{--                                    <div class="sidebar-fv-item" data-background="img/images/sidebar_featured_vehicle01.jpg">--}}
-{{--                                        <div class="fv-top-tag">--}}
-{{--                                            <ul>--}}
-{{--                                                <li><a href="#">For Rent</a></li>--}}
-{{--                                                <li><a class="new" href="#">New Car</a></li>--}}
-{{--                                            </ul>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="sidebar-fv-content">--}}
-{{--                                            <h5>$11,000<span>/mo</span></h5>--}}
-{{--                                            <p><a href="inventory-details.html">BMW 8 - Series 2 Door</a></p>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="sidebar-fv-item" data-background="img/images/sidebar_featured_vehicle02.jpg">--}}
-{{--                                        <div class="fv-top-tag">--}}
-{{--                                            <ul>--}}
-{{--                                                <li><a href="#">For Rent</a></li>--}}
-{{--                                                <li><a class="new" href="#">New Car</a></li>--}}
-{{--                                            </ul>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="sidebar-fv-content">--}}
-{{--                                            <h5>$29,000<span>/mo</span></h5>--}}
-{{--                                            <p><a href="inventory-details.html">Audi - A4 Sedan XL</a></p>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div class="sidebar-loan-calculator">--}}
-{{--                                    <a href="loan-calculator.html"><i class="fas fa-calculator"></i><span>Auto Loan Calculator</span></a>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <div class="widget inventory-widget">--}}
-{{--                                <div class="inv-widget-title mb-25">--}}
-{{--                                    <h5 class="title">Listed By Advisor</h5>--}}
-{{--                                </div>--}}
-{{--                                <div class="advisor-wrap mb-25">--}}
-{{--                                    <div class="advisor-thumb">--}}
-{{--                                        <img src="img/images/sidebar_listed_img.png" alt="">--}}
-{{--                                    </div>--}}
-{{--                                    <div class="advisor-info">--}}
-{{--                                        <h5><a href="#">Hamil Alexander.</a></h5>--}}
-{{--                                        <div class="phone">--}}
-{{--                                            <a href="tel:0987654321"><i class="flaticon-phone-call"></i> (123)456-7890</a>--}}
-{{--                                        </div>--}}
-{{--                                        <a href="author-profile.html" class="profile">Advisor Profile</a>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <form action="#" class="advisor-form">--}}
-{{--                                    <input type="text" placeholder="Your Name *">--}}
-{{--                                    <input type="email" placeholder="Your Email *">--}}
-{{--                                    <textarea name="message" placeholder="I'm interest in { Linting Single }"></textarea>--}}
-{{--                                    <button class="btn">Search</button>--}}
-{{--                                </form>--}}
-{{--                            </div>--}}
-{{--                        </aside>--}}
-{{--                    </div>--}}
                 </div>
             </div>
         </section>
         <!-- inventory-list-area-end -->
 
 @endsection
+
+
+
+
+
+
+
